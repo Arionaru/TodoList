@@ -67,9 +67,8 @@ export const deleteTodoSuccess = id => {
 export const deleteTodo = id => {
     return (dispatch) => {
         return axios.delete(`${apiUrl}/${id}`)
-            .then(response => {
-                dispatch(deleteTodoSuccess(response.data));
-                dispatch(fetchAllTodos());
+            .then(() => {
+                dispatch(deleteTodoSuccess(id));
             })
             .catch(error => {
                 throw(error);

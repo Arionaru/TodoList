@@ -45,10 +45,10 @@ export default (props) => {
             <button type="button"
                     onClick={() => {
                         dispatch(changeTodo(todo));
-                        setEdited(false);
+                        setEdited(!edited);
                     }}
             >
-                save
+                {edited &&('save') || ('edit')}
             </button>
             <button type="button"
                     onClick={() => {
