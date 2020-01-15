@@ -1,23 +1,14 @@
-import React, {useState} from "react";
-import {changeTodo} from '../actions';
-import {useDispatch} from "react-redux";
+import React from "react";
 
-
-function Checkbox({todo}) {
-    const dispatch = useDispatch();
-    const [done, setDone] = useState(todo.done);
-
+function Checkbox(props) {
     return (
         <input type='checkbox'
-               checked={done}
+               checked={props.todo.done}
                onChange={(event) => {
-                   setDone(event.target.checked);
-                   todo.done = !done;
-                   dispatch(changeTodo(todo));
+                   props.handleCheckboxChange(event);
                }}
         />
     )
-
 }
 
 export default Checkbox;

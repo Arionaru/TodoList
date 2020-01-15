@@ -35,8 +35,6 @@ export const changeTodo = (todo) => {
             done: todo.done,
         })
             .then(response => {
-                console.log(todo);
-                console.log(response.data);
                 dispatch(changeTodoSuccess(response.data));
             })
             .catch(error => {

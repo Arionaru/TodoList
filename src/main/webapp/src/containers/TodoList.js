@@ -18,7 +18,8 @@ function TodoList() {
                 return (
                     <Todo
                         todo={todo}
-                        key={todo.id}/>
+                        key={todo.id}
+                    />
                 );
             })}
         </div>

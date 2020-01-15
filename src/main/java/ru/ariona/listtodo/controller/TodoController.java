@@ -1,6 +1,7 @@
 package ru.ariona.listtodo.controller;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import ru.ariona.listtodo.domen.Todo;
@@ -37,7 +38,7 @@ public class TodoController {
 
     @PutMapping("/{id}")
     public Todo update(@PathVariable("id") Todo todoFromDb, @RequestBody Todo todo) {
-        todoFromDb.setDone(todo.isDone());
+        BeanUtils.copyProperties(todo,todoFromDb,"id");
         return repository.save(todoFromDb);
     }
 

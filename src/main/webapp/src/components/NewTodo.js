@@ -25,12 +25,9 @@ function NewTodo() {
                         type="text"
                         placeholder="todo"
                         className="form-control"
-                        name="todo"
                         onChange={handleInputChange}
                         value={title}
                     />
-                </div>
-                <div className="form-group">
                     <button type="submit" className="btn btn-primary">Add todo</button>
                 </div>
             </form>
